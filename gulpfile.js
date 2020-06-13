@@ -79,7 +79,8 @@ export const server = () => {
   sync.init({
     server: 'build/',
     ui: false,
-    notify: false
+    notify: false,
+    cors: true,
   });
 };
 
@@ -133,7 +134,7 @@ export const webp = () => {
 
 // Image processing
 
-export const imgproc = gulp.parallel(
+export const imgproc = gulp.series(
   images,
   webp
 );
